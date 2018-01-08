@@ -9,7 +9,6 @@ import static ru.otus.util.EmailRandomizer.saveObfuscatedEmailsToFile;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.PrintWriter;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -52,7 +51,7 @@ public class TotalizatorServlet extends HttpServlet {
 	      // Создание обработчика загрузки файла
 	      ServletFileUpload upload = new ServletFileUpload(factory);
 	      try {
-	        FileItem file = (FileItem) upload.parseRequest(request).stream().findFirst().get();
+	        FileItem file = upload.parseRequest(request).stream().findFirst().get();
 	        List<String> allLines;
 	        // Scanner тоже неплох :)
 	        try (BufferedReader buffer = new BufferedReader(

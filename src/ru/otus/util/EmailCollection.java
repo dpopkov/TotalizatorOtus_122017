@@ -3,7 +3,6 @@ package ru.otus.util;
 import java.util.List;
 import java.util.Objects;
 import java.util.Random;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 class EmailCollection {
